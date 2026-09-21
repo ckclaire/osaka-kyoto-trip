@@ -54,6 +54,9 @@
       display: none;
     }
   </style>
+  <!-- Firebase 8 Compat SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body class="text-fam-text bg-fam-bg antialiased min-h-screen pb-24">
   <div id="app" class="max-w-md mx-auto min-h-screen relative bg-fam-bg shadow-2xl">
@@ -657,6 +660,28 @@
   </div>
 
   <script>
+    // ==========================================
+    // 你的 Firebase 金鑰設定
+    // ==========================================
+    const firebaseConfig = {
+      apiKey: "AIzaSyCnm4OQ9_6pauWSxc7vsqXDyCyUtbQGmqc",
+      authDomain: "osaka-kyoto-trip-768f2.firebaseapp.com",
+      databaseURL: "https://osaka-kyoto-trip-768f2-default-rtdb.firebaseio.com",
+      projectId: "osaka-kyoto-trip-768f2",
+      storageBucket: "osaka-kyoto-trip-768f2.firebasestorage.app",
+      messagingSenderId: "1051141108876",
+      appId: "1:1051141108876:web:95967537cb49e82592f7a9"
+    };
+
+    let db = null;
+    let isFirebaseReady = false;
+    try {
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.database();
+      isFirebaseReady = true;
+    } catch (e) {
+      console.warn("Firebase 初始化失敗，降級為本機模式", e);
+    }
     const { createApp, ref, computed, onMounted, watch, nextTick } = Vue;
 
     createApp({
