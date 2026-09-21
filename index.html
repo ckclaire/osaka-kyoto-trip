@@ -59,7 +59,7 @@
   <div id="app" class="max-w-md mx-auto min-h-screen relative bg-fam-bg shadow-2xl">
 
     <!-- 頁首 Banner 容器 (高度 250px，滿版呈現) -->
-    <header class="relative w-full h-[250px] overflow-hidden bg-[#FCEBD2]">
+     <!--<header class="relative w-full h-[250px] overflow-hidden bg-[#FCEBD2]">
       <picture>
         <source srcset="首頁圖片.jpg" type="image/png">
         <img 
@@ -69,7 +69,14 @@
           onerror="this.style.display='none'; document.getElementById('fallback-banner').style.display='flex';"
         >
       </picture>
-      
+      <!-- 頁首 Banner 容器 (高度 250px，滿版呈現) -->
+<header class="relative w-full h-[250px] overflow-hidden bg-[#FCEBD2]">
+  <img 
+    src="首頁圖片.jpg" 
+    alt="開心暢遊大阪京都 家族旅遊" 
+    class="w-full h-full object-cover object-center"
+    onerror="this.style.display='none'; document.getElementById('fallback-banner').style.display='flex';"
+  >
       <!-- 備援展示區塊 (若圖片檔名有誤時自動呈現) -->
       <div id="fallback-banner" class="hidden absolute inset-0 bg-gradient-to-r from-[#D96B43] to-[#C34E35] flex-col justify-center items-center text-white px-4 text-center">
         <h1 class="text-xl font-bold tracking-wider">開心暢遊大阪京都 家族旅遊</h1>
